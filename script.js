@@ -11,7 +11,7 @@ const data = [
         image: './img/drink.jpg',
         text: "I'm Thirsty"
     },
-    
+
     {
         image: './img/food.jpg',
         text: "I'm Hungry"
@@ -66,3 +66,25 @@ const data = [
         text: 'I Want To Go To Grandmas'
     }
 ]
+
+// Add objects from the data array to the DOM + display
+data.forEach(createBox)
+
+// Create Item Box
+function createBox(item) {
+    const box = document.createElement('div')
+
+    const {image, text} = item
+
+    box.classList.add('box')
+
+    box.innerHTML = `
+        <img src = "${image}" alt = "${text}" />
+        <p class = "info">${text}</p>
+    `
+
+    // @todo: add speak event
+
+    // dsiplau box on the page
+    main.appendChild(box)
+}
