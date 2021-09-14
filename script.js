@@ -88,3 +88,13 @@ function createBox(item) {
     // dsiplau box on the page
     main.appendChild(box)
 }
+
+// Toggle text box
+toggleBtn.addEventListener('click', () => {
+    document.getElementById('textbox').classList.toggle('show')
+})
+
+// Close text box
+closeBtn.addEventListener('click', () => {
+    document.getElementById('textbox').classList.remove('show')
+})
