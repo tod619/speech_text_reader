@@ -124,6 +124,11 @@ function setTextMessage (text) {
     message.text = text
 }
 
+// set voice
+function setVoice(e) {
+    message.voice = voices.find(voice => voice.name === e.target.value)
+}
+
 // speak text
 function speakText() {
     speechSynthesis.speak(message)
@@ -141,6 +146,9 @@ toggleBtn.addEventListener('click', () => {
 closeBtn.addEventListener('click', () => {
     document.getElementById('textbox').classList.remove('show')
 })
+
+// Change voices using option select dropdown
+voicesSelect.addEventListener('change', setVoice)
 
 // Call getVoices function
 getVoices()
