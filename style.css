@@ -88,3 +88,11 @@ select:focus {
   cursor: pointer;
 }
 /* End: Textbox */
+
+/* Start: Main Section */
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+/* End: Main Section */
