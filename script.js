@@ -83,11 +83,22 @@ function createBox(item) {
         <p class = "info">${text}</p>
     `
 
-    // @todo: add speak event
+    // add speak event
+    box.addEventListener('click', () => {
+        setTextMessage(text)
+        speakText()
+
+        // Add active effect on box
+        box.classList.add('active')
+        setTimeout(()=> box.classList.remove('active'),800)
+    })
 
     // dsiplay box on the page
     main.appendChild(box)
 }
+
+// Init Speech synth utterance
+const message = new SpeechSynthesisUtterance()
 
 // Get Voices
 let voices = []
@@ -106,6 +117,16 @@ function getVoices() {
 
         voicesSelect.appendChild(option)
     })
+}
+
+// set text
+function setTextMessage (text) {
+    message.text = text
+}
+
+// speak text
+function speakText() {
+    speechSynthesis.speak(message)
 }
 
 // Speech Change
