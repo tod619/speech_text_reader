@@ -150,5 +150,11 @@ closeBtn.addEventListener('click', () => {
 // Change voices using option select dropdown
 voicesSelect.addEventListener('change', setVoice)
 
+// read text button
+readBtn.addEventListener('click', ()=> {
+    setTextMessage(textarea.value)
+    speakText()
+})
+
 // Call getVoices function
 getVoices()
