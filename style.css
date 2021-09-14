@@ -44,3 +44,47 @@ select:focus {
   margin: auto;
   margin-bottom: 20px;
 }
+
+/* Start: Textbox */
+.textbox {
+  width: 70%;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  transition: all 1s ease-in-out;
+}
+
+.textbox select {
+  background-color: darksalmon;
+  border: 0;
+  color: #fff;
+  font-size: 12px;
+  height: 30px;
+  width: 100%;
+}
+
+.textbox textarea {
+  border: 1px #dadada solid;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 8px;
+  margin: 15px 0;
+  max-width: 100%;
+  max-height: 150px;
+}
+
+.textbox .btn {
+  width: 100%;
+}
+
+.textbox .close {
+  float: right;
+  text-align: right;
+  cursor: pointer;
+}
+/* End: Textbox */
