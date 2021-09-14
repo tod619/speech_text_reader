@@ -85,9 +85,31 @@ function createBox(item) {
 
     // @todo: add speak event
 
-    // dsiplau box on the page
+    // dsiplay box on the page
     main.appendChild(box)
 }
+
+// Get Voices
+let voices = []
+
+function getVoices() {
+    voices = speechSynthesis.getVoices()
+
+    voices.forEach(voice => {
+        const option = document.createElement('option')
+
+        option.value = voice.name
+        
+        option.innerText = `
+        ${voice.name} ${voice.lang}
+        `
+
+        voicesSelect.appendChild(option)
+    })
+}
+
+// Speech Change
+speechSynthesis.addEventListener('voiceschanged', getVoices)
 
 // Toggle text box
 toggleBtn.addEventListener('click', () => {
@@ -98,3 +120,6 @@ toggleBtn.addEventListener('click', () => {
 closeBtn.addEventListener('click', () => {
     document.getElementById('textbox').classList.remove('show')
 })
+
+// Call getVoices function
+getVoices()
